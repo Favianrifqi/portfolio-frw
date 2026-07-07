@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SiNextdotjs, SiFastapi, SiDjango, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 const TechIcon = ({ name }: { name: string }) => {
-  const iconProps = { size: 20, className: "text-zinc-400 group-hover:text-blue-500 transition-colors" };
+  const iconProps = { size: 20, className: "text-foreground/50 group-hover:text-primary transition-colors" };
   switch (name.toLowerCase()) {
     case "next.js": return <SiNextdotjs {...iconProps} />;
     case "fastapi": return <SiFastapi {...iconProps} />;
@@ -19,40 +19,49 @@ const TechIcon = ({ name }: { name: string }) => {
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen flex flex-col justify-center items-center w-full py-24">
-      <motion.h2 
-        className="text-4xl font-bold tracking-tighter mb-20 text-center"
-        initial={{ opacity: 0, letterSpacing: "-0.05em" }}
-        whileInView={{ opacity: 1, letterSpacing: "0em" }}
-        transition={{ duration: 0.8 }}
-      >
-        Selected Works.
-      </motion.h2>
+    <section id="projects" className="flex flex-col justify-start items-start w-full">
+      <div className="mb-16">
+        <motion.h2 
+          className="text-4xl font-bold tracking-tighter text-foreground font-serif"
+          initial={{ opacity: 0, letterSpacing: "-0.05em" }}
+          whileInView={{ opacity: 1, letterSpacing: "0em" }}
+          transition={{ duration: 0.8 }}
+        >
+          Selected Works.
+        </motion.h2>
+        <motion.div 
+          className="h-[2px] bg-primary mt-4"
+          initial={{ width: 0 }}
+          whileInView={{ width: "40px" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          viewport={{ amount: 0.8 }}
+        />
+      </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 w-full max-w-6xl">
+      <div className="flex flex-col gap-16 w-full">
         {portfolioData.projects.map((project, index) => (
           <motion.div 
             key={project.title} 
-            className="group relative flex flex-col p-8 rounded-[2.5rem] bg-white/50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
+            className="group relative flex flex-col p-8 rounded-3xl bg-secondary/30 border border-secondary hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden items-start text-left"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: index * 0.15 }}
             viewport={{ margin: "-50px" }}
           >
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-2xl font-bold tracking-tight group-hover:text-blue-500 transition-colors">
+            <div className="flex items-center justify-between w-full mb-6">
+              <h3 className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors font-serif">
                 {project.title}
               </h3>
-              <div className="p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                <ArrowUpRight size={20} />
+              <div className="p-2 rounded-full bg-background border border-secondary group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <ArrowUpRight size={18} className="text-foreground group-hover:text-white" />
               </div>
             </div>
             
-            <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-8">
+            <p className="text-foreground/80 text-lg leading-relaxed mb-8">
               {project.desc}
             </p>
 
-            <div className="mt-auto flex flex-wrap items-center gap-4 pt-6 border-t border-zinc-200 dark:border-zinc-800">
+            <div className="mt-auto flex flex-wrap justify-start items-center gap-4 pt-6 border-t border-secondary w-full">
               {project.tech.map(t => <TechIcon key={t} name={t} />)}
             </div>
           </motion.div>

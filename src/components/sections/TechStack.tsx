@@ -32,19 +32,28 @@ export default function TechStack() {
   };
 
   return (
-    <section id="tech" className="min-h-screen flex flex-col justify-center items-end text-right w-full">
-      <div className="w-full max-w-2xl flex flex-col items-end">
-        <motion.h2 
-          className="text-3xl font-bold tracking-tight border-b-2 border-zinc-200 dark:border-zinc-800 pb-4 mb-12 inline-block pl-12"
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          Tech Stack.
-        </motion.h2>
+    <section id="tech" className="flex flex-col justify-start items-start text-left w-full">
+      <div className="w-full flex flex-col items-start">
+        <div className="mb-12">
+          <motion.h2 
+            className="text-4xl font-bold tracking-tight text-foreground font-serif"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            Tech Stack.
+          </motion.h2>
+          <motion.div 
+            className="h-[2px] bg-primary mt-4"
+            initial={{ width: 0 }}
+            whileInView={{ width: "40px" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            viewport={{ amount: 0.8 }}
+          />
+        </div>
         
         <motion.div 
-          className="flex flex-wrap justify-end gap-4"
+          className="flex flex-wrap justify-start gap-4"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -53,7 +62,7 @@ export default function TechStack() {
             <motion.span 
               key={tech} 
               variants={item}
-              className="px-6 py-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:border-blue-500 hover:text-blue-500 transition-colors duration-300 backdrop-blur-sm"
+              className="px-6 py-3 rounded-full border border-secondary text-sm font-medium text-foreground/80 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               {tech}
             </motion.span>
