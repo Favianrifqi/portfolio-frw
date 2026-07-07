@@ -2,5 +2,6 @@
 import { ThemeProvider } from "next-themes";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return <ThemeProvider attribute="class" defaultTheme="system" enableSystem>{children}</ThemeProvider>;
+  // Force light mode for the Studio style
+  return <ThemeProvider attribute="class" forcedTheme="light" enableSystem={false}>{children}</ThemeProvider>;
 }

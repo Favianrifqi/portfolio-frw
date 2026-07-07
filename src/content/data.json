@@ -1,0 +1,40 @@
+{
+  "name": "Favian Rifqi",
+  "role": "Web Developer & Cybersecurity Enthusiast",
+  "university": "UPNVJT",
+  "semester": 6,
+  "gpa": "3.95",
+  "profileImage": "/card.jpg",
+  "about": "Saat ini saya adalah mahasiswa semester 6 di UPNVJT, dengan ketertarikan yang mendalam pada persimpangan antara Web Development dan Cybersecurity. Saya tidak hanya merancang sistem yang bekerja secara elegan, tetapi juga memastikan sistem tersebut tidak mudah dieksploitasi.\n\nDalam bidang keamanan siber, fokus utama saya adalah Penetration Testing dan Mitigasi Kerentanan (Vulnerability Mitigation). Saya terbiasa mengaudit aplikasi web, mencari celah keamanan, dan menambalnya dengan arsitektur kode yang solid.\n\nKetika sedang tidak menganalisis kerentanan sistem atau menulis kode, saya biasanya memperbarui pengetahuan mengenai vektor serangan terbaru atau mengeksplorasi tren arsitektur web berskala besar.",
+  "techStack": [
+    "Next.js", "React", "TypeScript", "Tailwind CSS",
+    "FastAPI", "Django", "PostgreSQL", "Python",
+    "Git", "Vercel", "Burp Suite", "Kali Linux"
+  ],
+  "projects": [
+    {
+      "title": "Website Corpus",
+      "desc": "Sistem indexing data berskala nasional. Menggunakan FastAPI untuk pemrosesan backend cepat dan Django untuk manajemen frontend yang aman.",
+      "tech": ["FastAPI", "Django", "Python", "Security Audit"],
+      "link": "#"
+    },
+    {
+      "title": "Virtual Tour Desa Jubung",
+      "desc": "Digitalisasi potensi desa wisata melalui platform Fullstack dengan fokus pada performa akses ringan dan manajemen CMS mandiri.",
+      "tech": ["Next.js", "Tailwind CSS", "PostgreSQL"],
+      "link": "#"
+    },
+    {
+      "title": "Kos Finder V2",
+      "desc": "Platform pencarian tempat tinggal dengan filter keamanan transaksi dan arsitektur database teroptimasi.",
+      "tech": ["React", "TypeScript", "PostgreSQL"],
+      "link": "#"
+    },
+    {
+      "title": "Pentest Lab (Local)",
+      "desc": "Lingkungan simulasi serangan web secara lokal untuk mempraktikkan mitigasi kerentanan OWASP Top 10.",
+      "tech": ["Python", "Kali Linux", "Docker"],
+      "link": "#"
+    }
+  ]
+}
